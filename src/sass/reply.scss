@@ -1,0 +1,53 @@
+@import "global";
+
+.reply-attach-after {
+  @extend .label-attach;
+
+  button {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    padding: 0;
+  }
+}
+
+.reply-attach-before {
+  @extend .label-attach;
+
+  button {
+    margin-right: 5px;
+    width: 22px;
+    height: 20px;
+    border-radius: 20px;
+    padding: 0;
+    margin-top: 8px;
+  }
+}
+
+.info-body {
+  margin-bottom: 20px;
+
+  .info-header {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  .info-content {
+    span {
+      margin-right: 10px;
+    }
+  }
+}
+
+.message-header {
+  span {
+    margin-left: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  span.active{
+    color: #44B549;
+  }
+}

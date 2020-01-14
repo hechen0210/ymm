@@ -1,0 +1,34 @@
+
+.loginPage {
+  background: url("../images/bg.jpeg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  .login {
+    width: 30vw;
+    height: 300px;
+    margin-top: 50px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px white;
+
+    form {
+      margin-top: 50px;
+    }
+
+    .rs-form-horizontal .rs-form-group .rs-control-label {
+      width: 110px;
+    }
+
+    .rs-form-horizontal .rs-form-group .rs-btn-toolbar {
+      padding-left: 122px;
+    }
+  }
+
+  button {
+    width: 300px;
+  }
+}
