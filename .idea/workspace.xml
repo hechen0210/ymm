@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="58372bb1-d358-4103-9ee4-a726677fc4c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.db62b09398eb84be208afef3c4eab906.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.58803ee2.chunk.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/layout/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/layout/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/authRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/authRouter.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +79,7 @@
       <updated>1578627590002</updated>
       <workItem from="1578627598074" duration="283000" />
       <workItem from="1578627950437" duration="477000" />
-      <workItem from="1578635874081" duration="95747000" />
+      <workItem from="1578635874081" duration="96003000" />
     </task>
     <servers />
   </component>
