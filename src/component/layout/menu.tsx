@@ -12,7 +12,6 @@ const NavLink = (props: any) => (<Nav.Item componentClass={Link} {...props} />);
 
 class Menu extends React.Component<IProps, any> {
     render() {
-        console.log(this.props.activeKey)
         return (
             <Sidebar
                 id="menu"

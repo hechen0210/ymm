@@ -33,7 +33,7 @@ export default class AuthRouter extends React.Component<any, any> {
         return (
             <Switch>
                 <Layout>
-                    <PrivateRoute exact path="/" component={Main}/>
+                    <PrivateRoute exact path="/" component={Area}/>
                     <PrivateRoute exact path={SETTING} component={Setting}/>
                     <PrivateRoute exact path={AREA_LIST} component={Area}/>
                     <PrivateRoute exact path={BRAND_LIST} component={Brand}/>
