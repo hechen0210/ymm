@@ -149,6 +149,7 @@ export default class Index extends React.Component<IProps, any> {
                 {
                     this.props.total > 0 ? <Pagination
                         activePage={this.state.page}
+                        displayLength={20}
                         total={this.props.total}
                         renderLengthMenu={() => {
                             return ""

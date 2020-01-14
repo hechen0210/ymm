@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Content} from 'rsuite';
+import {Container, Content, Breadcrumb} from 'rsuite';
 import Menu from "./menu";
 import Header from "./header"
 import "../../sass/layout.scss"
@@ -12,7 +12,7 @@ export interface IProps {
     onExpand: () => void,
     onLogout: () => void,
     onSetting: () => void,
-    activeKey: string,
+    active: any,
 }
 
 class Layout extends React.Component<IProps, any> {
@@ -23,8 +23,12 @@ class Layout extends React.Component<IProps, any> {
                     <Header expand={this.props.expand} loginInfo={this.props.loginInfo} onExpand={this.props.onExpand}
                             onLogout={this.props.onLogout} onSetting={this.props.onSetting}/>
                     <Container id="content">
-                        <Menu expand={this.props.expand} activeKey={this.props.activeKey}/>
+                        <Menu expand={this.props.expand} activeKey={this.props.active.key}/>
                         <Content id="main">
+                            <Breadcrumb style={{marginBottom: 0}}>
+                                <Breadcrumb.Item>首页</Breadcrumb.Item>
+                                <Breadcrumb.Item active>{this.props.active.name}</Breadcrumb.Item>
+                            </Breadcrumb>
                             <div id="main-content">
                                 {this.props.children}
                             </div>

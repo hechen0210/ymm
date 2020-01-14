@@ -20,7 +20,7 @@ class Menu extends React.Component<IProps, any> {
             >
                 <Sidenav
                     expanded={this.props.expand}
-                    appearance="subtle"
+                    // appearance="subtle"
                     defaultOpenKeys={['2']}
                     activeKey={this.props.activeKey}
                 >

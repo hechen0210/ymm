@@ -6,12 +6,10 @@ export interface SettingAction {
 }
 
 export function changePassword(oldPassword: string, newPassword: string, repeat: string) {
-    let errorMessage = ""
     return {
         type: CHANGE_PASSWORD,
-        oldPassword: oldPassword,
-        newPassword: newPassword,
-        repeat: repeat,
-        errorMessage: errorMessage
+        oldPassword,
+        newPassword,
+        repeat,
     }
 }

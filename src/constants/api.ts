@@ -1,29 +1,12 @@
 export const DOMAIN = (window as any).__config.domain
 //登录
 export const LOGIN = "/login"
+export const PASSWORD_UPDATE = "/change-password"
 //区域
 export const AREA_LIST = "/area/list"
 export const AREA_UPDATE = "/area/update"
 export const AREA_DEL = "/area/del"
 export const AREA_ALL = "/area/all"
-//品牌
-export const BRAND_LIST = "/brand/list"
-export const BRAND_UPDATE = "/brand/update"
-export const BRAND_DEL = "/brand/del"
-export const BRAND_ALL = "/brand/all"
-//性质
-export const TYPE_LIST = "/type/list"
-export const TYPE_UPDATE = "/type/update"
-export const TYPE_DEL = "/type/del"
-export const TYPE_ALL = "/type/all"
-//品牌
-export const MENU_LIST = "/menu/list"
-export const MENU_UPDATE = "/menu/update"
-export const MENU_DEL = "/menu/del"
-//城市
-export const CITY_LIST = "/city/list"
-export const PROVINCE_LIST = "/city/province-list"
-export const ALL_CITY_LIST = "/city/city-list"
 
 //关键词回复
 export const KEY_WORDS_LIST = "/key_words/list"

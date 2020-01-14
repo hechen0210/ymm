@@ -14,19 +14,19 @@ function* login(account: string, password: string) {
             name: result.name,
             token: "result.token"
         })
-        // if (result.code === 200) {
-        //     setAuth({
-        //         uid: "1",
-        //         account: account,
-        //         name: result.name,
-        //         token: result.token
-        //     })
+        if (result.code === 200) {
+            setAuth({
+                uid: result.data.uid,
+                account: account,
+                name: result.data.name,
+                token: result.data.token
+            })
             yield put(push("/area-list"))
             yield put({type: LOGIN_RESULT, message: "登录成功"})
-        // } else {
-        //     yield put({type: LOGIN, message: "登录失败"})
-        //     Alert.error("登录失败")
-        // }
+        } else {
+            yield put({type: LOGIN, message: "登录失败"})
+            Alert.error("登录失败")
+        }
     } catch (e) {
         yield put({type: LOGIN_RESULT, message: "登录失败"})
     }

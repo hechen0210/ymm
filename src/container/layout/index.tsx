@@ -13,7 +13,7 @@ const mapStateToProps = (state: any, props: any) => ({
     loginInfo: getLoginInfo(),
     expand: state.Layout.expand,
     children: props.children,
-    activeKey: getActiveKey(),
+    active: getActiveKey(),
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

@@ -18,36 +18,8 @@ export const menuList = [
                 "key": "2-1",
                 "url": AREA_LIST
             },
-            // {
-            //     "name": "品牌列表",
-            //     "key": "2-2",
-            //     "url": BRAND_LIST
-            // },
-            // {
-            //     "name": "性质列表",
-            //     "key": "2-3",
-            //     "url": TYPE_LIST
-            // },
-            // {
-            //     "name": "城市列表",
-            //     "key": "2-4",
-            //     "url": CITY_LIST
-            // }
         ]
     },
-    // {
-    //     "name": "菜单管理",
-    //     "key": "3",
-    //     "url": "",
-    //     "icon": "",
-    //     "sub": [
-    //         {
-    //             "name": "菜单列表",
-    //             "key": "3-1",
-    //             "url": MENU_LIST
-    //         },
-    //     ]
-    // },
     {
         "name": "自动回复",
         "key": "4",
@@ -71,19 +43,6 @@ export const menuList = [
             },
         ]
     },
-    // {
-    //     "name": "门店管理",
-    //     "key": "5",
-    //     "url": "",
-    //     "icon": "",
-    //     "sub": [
-    //         {
-    //             "name": "门店列表",
-    //             "key": "5-1",
-    //             "url": SHOP_LIST
-    //         },
-    //     ]
-    // },
     {
         "name": "二维码管理",
         "key": "6",
@@ -113,13 +72,15 @@ export const menuList = [
 ]
 
 export function getActiveKey() {
+    let active = {name: "", activeKey: ""}
     const url = window.location.pathname
     for (let i = 0; i < menuList.length; i++) {
         for (let j = 0; j < menuList[i].sub.length; j++) {
             if (menuList[i].sub[j].url === url) {
-                return menuList[i].sub[j].key
+                active.name = menuList[i].sub[j].name
+                active.activeKey = menuList[i].sub[j].key
             }
         }
     }
-    return ""
+    return active
 }
