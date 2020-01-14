@@ -31,9 +31,9 @@ export interface IProps {
 }
 
 export default class Edit extends React.Component<IProps, any> {
-    constructor(props: Readonly<IProps>) {
-        super(props);
-    }
+    // constructor(props: Readonly<IProps>) {
+    //     super(props);
+    // }
 
     componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<any>, snapshot?: any): void {
         if (!prevProps.show && this.props.show) {

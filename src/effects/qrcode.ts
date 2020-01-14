@@ -11,7 +11,6 @@ import {
 import {QRCODE_LIST, QRCODE_CREATE, QRCODE_DEL, QRCODE_DOWNLOAD} from "../constants/api";
 import {push} from "connected-react-router";
 import {Alert} from "rsuite";
-import qrcode from "../reducers/qrcode";
 
 function* list(page: number, pageSize: number) {
     try {

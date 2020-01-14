@@ -82,7 +82,7 @@ function* watchBrandDel() {
 
 function* watchBrandAll() {
     while (true) {
-        const allAction = yield take(ALL_BRAND)
+        yield take(ALL_BRAND)
         yield call(list)
     }
 }

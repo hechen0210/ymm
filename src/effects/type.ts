@@ -82,7 +82,7 @@ function* watchTypeDel() {
 
 function* watchTypeAll() {
     while (true) {
-        const allAction = yield take(ALL_TYPE)
+        yield take(ALL_TYPE)
         yield call(list)
     }
 }

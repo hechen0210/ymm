@@ -8,10 +8,10 @@ export interface IProps {
 }
 
 export default class TextMessage extends React.Component<IProps, any> {
-    constructor(props: Readonly<IProps>) {
-        super(props);
-
-    }
+    // constructor(props: Readonly<IProps>) {
+    //     super(props);
+    //
+    // }
 
     handleFrom = (name: string, value: string) => {
         let formValue = this.props.formValue

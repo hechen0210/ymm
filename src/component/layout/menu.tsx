@@ -12,6 +12,7 @@ const NavLink = (props: any) => (<Nav.Item componentClass={Link} {...props} />);
 
 class Menu extends React.Component<IProps, any> {
     render() {
+        console.log(this.props.activeKey)
         return (
             <Sidebar
                 id="menu"
@@ -21,13 +22,11 @@ class Menu extends React.Component<IProps, any> {
                 <Sidenav
                     expanded={this.props.expand}
                     appearance="subtle"
-                    activeKey="2-1"
+                    defaultOpenKeys={['2']}
+                    activeKey={this.props.activeKey}
                 >
                     <Sidenav.Body>
                         <Nav>
-                            <Nav.Item eventKey="1" icon={<Icon icon="dashboard"/>}>
-                                Dashboard
-                            </Nav.Item>
                             {
                                 menuList.map((item, index) => {
                                     return <Dropdown
@@ -43,7 +42,8 @@ class Menu extends React.Component<IProps, any> {
                                                     return <NavLink
                                                         key={subItem.key}
                                                         to={subItem.url}
-                                                        eventKey={subItem.key}>{subItem.name}
+                                                        eventKey={subItem.key}>
+                                                        {subItem.name}
                                                     </NavLink>
                                                 }
                                             )

@@ -56,14 +56,14 @@ export default class Brand extends React.Component<IProps, any> {
         const ActionCell = ({rowData, dataKey, ...props}: any) => {
             return (
                 <Cell {...props} className="link-group">
-                    <a onClick={() => {
+                    <a role="button" onClick={() => {
                         this.props.onModify({"id": rowData.id, "name": rowData.name})
                         this.setState({
                             show: true
                         })
                     }}>编辑</a>
                     <Divider vertical/>
-                    <a onClick={() => {
+                    <a role="button" onClick={() => {
                         this.props.onDel(rowData.id, "brand")
                     }}>删除</a>
                 </Cell>

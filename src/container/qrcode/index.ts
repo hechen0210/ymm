@@ -1,7 +1,7 @@
 import {withRouter} from "react-router"
 import {connect} from "react-redux";
 import {Dispatch} from "redux";
-import {createAction, delAction, downAction, getListAction, modifyAction, updateAction} from "../../actions/qrcode";
+import {createAction, delAction, downAction, getListAction} from "../../actions/qrcode";
 import Qrcode from "../../component/qrcode";
 
 const mapStateToProps = (state: any) => ({

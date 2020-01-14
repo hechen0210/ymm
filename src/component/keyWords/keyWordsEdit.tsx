@@ -49,7 +49,6 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
         this.setState({
             formValue: formValue
         })
-        console.log(formValue)
         this.props.onModify(formValue)
     }
 
@@ -107,7 +106,6 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
                             </div>
                             {
                                 this.props.formValue.key_words.map((item: any, index: number) => {
-                                    console.log(item, item["match"], item.words)
                                     return <div key={index} className="reply-attach-before"
                                                 style={{marginBottom: "15px"}}>
                                         {

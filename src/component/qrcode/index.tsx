@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Divider, Icon, Table, Loader} from "rsuite";
+import {Button, Divider, Icon, Table} from "rsuite";
 import "../../sass/qrcode.scss"
 
 export interface IProps {

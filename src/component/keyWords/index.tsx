@@ -67,7 +67,7 @@ export default class Index extends React.Component<IProps, any> {
         const ActionCell = ({rowData, dataKey, ...props}: any) => {
             return (
                 <Cell {...props} className="link-group">
-                    <a onClick={() => {
+                    <a role="button" onClick={() => {
                         this.props.onModify({
                             "id": rowData.id,
                             "name": rowData.name,
@@ -83,7 +83,7 @@ export default class Index extends React.Component<IProps, any> {
 
                     }}>编辑</a>
                     <Divider vertical/>
-                    <a onClick={() => {
+                    <a role="button" onClick={() => {
                         this.setState({
                             showInfo: true,
                             info: {
@@ -97,7 +97,7 @@ export default class Index extends React.Component<IProps, any> {
                         })
                     }}>详情</a>
                     <Divider vertical/>
-                    <a onClick={() => {
+                    <a role="button" onClick={() => {
                         this.props.onDel(rowData.id, "key_words")
                     }}>删除</a>
                 </Cell>
@@ -114,7 +114,6 @@ export default class Index extends React.Component<IProps, any> {
             }
             return <Cell {...props}>{keyWords}</Cell>
         }
-        console.log(this.props.list)
         return (
             <div id="page">
                 <KeyWordsEdit show={this.state.show} onClose={this.close} title={this.state.title}
@@ -125,7 +124,7 @@ export default class Index extends React.Component<IProps, any> {
                     <Icon icon="plus"/> 新增回复
                 </Button>
                 <Divider/>
-                <Table loading={false} data={this.props.list} style={{marginLeft: 25, marginRight: 25}}>
+                <Table loading={false} data={this.props.list} style={{marginLeft: 25, marginRight: 25}} autoHeight={true}>
                     <Column width={50} align="center" fixed>
                         <HeaderCell>Id</HeaderCell>
                         <Cell dataKey="id"/>

@@ -16,7 +16,6 @@ export const initState = {
 }
 
 export default (state = initState, action: message) => {
-    console.log(action)
     if (action.type === GET_SUBSCRIBE_INFO) {
         return Object.assign({}, state, {
             info: action.info

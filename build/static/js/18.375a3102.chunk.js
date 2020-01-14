@@ -1,2 +1,1 @@
 (this.webpackJsonpadmin=this.webpackJsonpadmin||[]).push([[18],{691:function(t,n,e){"use strict";e.r(n),e.d(n,"default",(function(){return p}));var a=e(30),c=e(31),i=e(33),r=e(32),u=e(34),s=e(0),o=e.n(s),p=function(t){function n(){return Object(a.a)(this,n),Object(i.a)(this,Object(r.a)(n).apply(this,arguments))}return Object(u.a)(n,t),Object(c.a)(n,[{key:"render",value:function(){return o.a.createElement("div",null,"\u9996\u9875")}}]),n}(o.a.Component)}}]);
-//# sourceMappingURL=18.375a3102.chunk.js.map

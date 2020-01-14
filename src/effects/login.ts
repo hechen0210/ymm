@@ -21,7 +21,7 @@ function* login(account: string, password: string) {
         //         name: result.name,
         //         token: result.token
         //     })
-            yield put(push("/"))
+            yield put(push("/area-list"))
             yield put({type: LOGIN_RESULT, message: "登录成功"})
         // } else {
         //     yield put({type: LOGIN, message: "登录失败"})

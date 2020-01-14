@@ -2,9 +2,6 @@ import React from "react";
 import {
     Button,
     Drawer,
-    Panel,
-    ControlLabel,
-    List
 } from "rsuite";
 
 export interface IProps {

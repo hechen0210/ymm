@@ -1,7 +1,6 @@
 import React from "react";
 import TextMessage from "./textMessage";
 import "../../sass/reply.scss"
-import Media from "./media";
 
 export interface IProps {
     info: any

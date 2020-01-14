@@ -38,7 +38,7 @@ export default class Edit extends React.Component<IProps, any> {
     }
 
     handleUpdate = () => {
-        const id = this.props.formValue.id
+        // const id = this.props.formValue.id
         const name = this.props.formValue.name.trim()
         if (!name) {
             Alert.error("性质名称不能为空")
