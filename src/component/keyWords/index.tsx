@@ -20,7 +20,7 @@ export default class Index extends React.Component<IProps, any> {
     constructor(props: Readonly<IProps>) {
         super(props)
         this.state = {
-            show: true,
+            show: false,
             showInfo: false,
             info: initState.formValue,
             title: "添加回复",
@@ -109,7 +109,9 @@ export default class Index extends React.Component<IProps, any> {
             data.forEach((item: any, index: number) => {
                 keyWords += item.words + ","
             })
-            keyWords = keyWords.substr(0, keyWords.length - 1)
+            if (keyWords.length > 0) {
+                keyWords = keyWords.substr(0, keyWords.length - 1)
+            }
             return <Cell {...props}>{keyWords}</Cell>
         }
         return (

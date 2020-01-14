@@ -22,7 +22,7 @@ export default (state = initState, action: message) => {
         })
     } else if (action.type === MODIFY_MESSAGE) {
         return Object.assign({}, state, {
-            formValue: action.info
+            info: action.info
         })
     }
     return state

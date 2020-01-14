@@ -27,7 +27,7 @@ function updateAction(formValue: any) {
 function modifyAction(formValue: any) {
     return {
         type: MODIFY_SUBSCRIBE,
-        formValue
+        info:formValue
     }
 }
 
