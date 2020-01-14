@@ -1,141 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="58372bb1-d358-4103-9ee4-a726677fc4c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/jest/cssTransform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/jest/fileTransform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/modules.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/paths.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/pnpTs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/webpackDevServer.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/build.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/start.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/area.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/brand.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/city.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/keyWords.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/layout.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/login.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/menu.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/qrcode.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/setting.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/shop.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/subscribe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/area/edit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/area/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/brand/edit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/brand/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/data/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/keyWords/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/keyWords/keyWordsEdit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/keyWords/keyWordsInfo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/layout/header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/layout/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/layout/menu.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/loading/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/login/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/menu/edit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/menu/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/message/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/message/media.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/message/textMessage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/privateRoute/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/qrcode/edit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/qrcode/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/setting/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/shop/edit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/shop/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/subscribe/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/subscribe/textMessage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/type/edit.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/component/type/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/api.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/language.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/menu.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/constants/urls.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/area/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/brand/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/data/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/layout/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/login/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/main/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/menu/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/qrcode/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/replay/keyWords.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/replay/message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/replay/subscribe.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/setting/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/shop/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/container/type/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/area.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/brand.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/city.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/keyWords.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/login.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/menu.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/qrcode.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/subscribe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/effects/type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/bg.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/area.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/brand.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/city.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/keyWords.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/layout.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/login.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/menu.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/message.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/qrcode.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/setting.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/shop.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/subscribe.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/type.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/authRouter.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/router/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/data.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/global.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/layout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/login.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/menu.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/qrcode.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/reply.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/setting.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/shop.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sass/system.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/store.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/types/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/ajax.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/cookie.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="58372bb1-d358-4103-9ee4-a726677fc4c8" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -204,7 +70,7 @@
       <updated>1578627590002</updated>
       <workItem from="1578627598074" duration="283000" />
       <workItem from="1578627950437" duration="477000" />
-      <workItem from="1578635874081" duration="89380000" />
+      <workItem from="1578635874081" duration="89683000" />
     </task>
     <servers />
   </component>
