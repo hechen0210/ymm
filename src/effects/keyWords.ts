@@ -9,9 +9,13 @@ function* list(type: string, page: number, pageSize: number) {
     try {
         const result = yield call(ajax.get, KEY_WORDS_LIST, {type: type, page: page, pageSize: pageSize})
         if (result.code === 200) {
+            let list = []
+            if (result.data.total > 0) {
+                list = result.data.list
+            }
             yield put({
                 type: GET_KEY_WORDS_LIST_SHOW,
-                list: result.data.list,
+                list: list,
                 total: result.data.total,
                 message: result.message
             })

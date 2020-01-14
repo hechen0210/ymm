@@ -21,8 +21,8 @@ function* login(account: string, password: string) {
         //         name: result.name,
         //         token: result.token
         //     })
-        //     yield put(push("/"))
-        //     yield put({type: LOGIN_RESULT, message: "登录成功"})
+            yield put(push("/"))
+            yield put({type: LOGIN_RESULT, message: "登录成功"})
         // } else {
         //     yield put({type: LOGIN, message: "登录失败"})
         //     Alert.error("登录失败")
@@ -45,6 +45,11 @@ function* watchLogin() {
     while (true) {
         const loginAction = yield take(LOGIN)
         yield call(login, loginAction.account, loginAction.password)
+    }
+}
+
+function* watchLogout() {
+    while (true) {
         yield take(LOGOUT)
         yield call(logout)
     }
@@ -52,4 +57,5 @@ function* watchLogin() {
 
 export {
     watchLogin,
+    watchLogout
 }

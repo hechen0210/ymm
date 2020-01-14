@@ -1,5 +1,5 @@
 import {all, fork} from "redux-saga/effects"
-import {watchLogin} from "./login";
+import {watchLogin, watchLogout} from "./login";
 import {watchAreaList, watchAreaUpdate, watchAreaDel, watchAreaAll} from "./area";
 import {watchBrandList, watchBrandUpdate, watchBrandDel, watchBrandAll} from "./brand";
 import {watchTypeList, watchTypeUpdate, watchTypeDel, watchTypeAll} from "./type";
@@ -14,6 +14,7 @@ import {watchSubscribeInfo, watchSubscribeUpdate} from "./subscribe";
 function* effects() {
     yield all([
         fork(watchLogin),
+        fork(watchLogout),
         fork(watchAreaList),
         fork(watchAreaUpdate),
         fork(watchAreaDel),

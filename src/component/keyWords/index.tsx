@@ -114,6 +114,7 @@ export default class Index extends React.Component<IProps, any> {
             }
             return <Cell {...props}>{keyWords}</Cell>
         }
+        console.log(this.props.list)
         return (
             <div id="page">
                 <KeyWordsEdit show={this.state.show} onClose={this.close} title={this.state.title}
