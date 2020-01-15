@@ -67,7 +67,7 @@ export default class Data extends React.Component<IProps, any> {
                                 }}
                             />
                         </FormGroup>
-                        <Button className="form-button" onClick={() => {
+                        <Button className="form-button" appearance="primary" onClick={() => {
                             this.props.getList(this.props.condition, 0, 20)
                         }}>查询</Button>
                     </Form>

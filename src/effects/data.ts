@@ -9,9 +9,13 @@ function* getList(condition: dataCondition, page: number, pageSize: number) {
     try {
         const result = yield call(ajax.post, DATA_LIST, {...condition, page: page, pageSize: pageSize})
         if (result.code === 200) {
+            let list = []
+            if (result.data.total > 0) {
+                list = result.data.list
+            }
             yield put({
                 type: GET_DATA_LIST_SHOW,
-                list: result.data.list,
+                list: list,
                 total: result.data.total,
                 message: result.message
             })

@@ -7,16 +7,20 @@ import {Alert} from "rsuite";
 
 function* list(page = 0, pageSize = 0) {
     try {
-        let result = {code: 0, data: {list: "", total: ""}, message: ""}
+        let list = new Array()
+        let result = {code: 0, data: {list: [], total: 0}, message: ""}
         if (pageSize === 0) {
             result = yield call(ajax.get, AREA_ALL)
         } else {
             result = yield call(ajax.get, AREA_LIST, {page: page, pageSize: pageSize})
         }
+        if (result.data.total > 0) {
+            list = result.data.list
+        }
         if (result.code === 200) {
             yield put({
                 type: GET_AREA_LIST_SHOW,
-                list: result.data.list,
+                list: list,
                 total: result.data.total,
                 message: result.message
             })

@@ -1,5 +1,5 @@
 import ajax from "../utils/ajax";
-import {call, put, take} from "redux-saga/effects";
+import {call, take} from "redux-saga/effects";
 import {PASSWORD_UPDATE} from "../constants/api";
 import {Alert} from "rsuite";
 import {CHANGE_PASSWORD} from "../constants/actions";

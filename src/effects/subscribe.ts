@@ -8,7 +8,6 @@ import {GET_SUBSCRIBE, GET_SUBSCRIBE_INFO, UPDATE_SUBSCRIBE} from "../constants/
 function* info(type: string) {
     try {
         const result = yield call(ajax.get, MESSAGE_INFO, {type: type})
-        console.log(result)
         if (result.code === 200) {
             yield put({
                 type: GET_SUBSCRIBE_INFO,

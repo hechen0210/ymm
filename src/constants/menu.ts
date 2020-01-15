@@ -72,11 +72,12 @@ export const menuList = [
 ]
 
 export function getActiveKey() {
-    let active = {name: "", activeKey: ""}
+    let active = {parent: "", name: "", activeKey: ""}
     const url = window.location.pathname
     for (let i = 0; i < menuList.length; i++) {
         for (let j = 0; j < menuList[i].sub.length; j++) {
             if (menuList[i].sub[j].url === url) {
+                active.parent = menuList[i].key
                 active.name = menuList[i].sub[j].name
                 active.activeKey = menuList[i].sub[j].key
             }

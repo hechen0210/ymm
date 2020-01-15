@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import {menuList} from "../../constants/menu";
 
 export interface IProps {
-    activeKey: string
+    active: any
     expand: boolean
 }
 
@@ -20,9 +20,8 @@ class Menu extends React.Component<IProps, any> {
             >
                 <Sidenav
                     expanded={this.props.expand}
-                    // appearance="subtle"
-                    defaultOpenKeys={['2']}
-                    activeKey={this.props.activeKey}
+                    appearance="subtle"
+                    defaultOpenKeys={[this.props.active.parent]}
                 >
                     <Sidenav.Body>
                         <Nav>
@@ -41,7 +40,9 @@ class Menu extends React.Component<IProps, any> {
                                                     return <NavLink
                                                         key={subItem.key}
                                                         to={subItem.url}
-                                                        eventKey={subItem.key}>
+                                                        eventKey={subItem.key}
+                                                        className={subItem.key === this.props.active.activeKey ? "active" : ""}
+                                                    >
                                                         {subItem.name}
                                                     </NavLink>
                                                 }
