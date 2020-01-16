@@ -1,5 +1,4 @@
 import {LOGIN, LOGOUT} from "../constants/actions";
-import {clearAuth} from "../utils/auth";
 
 export interface LoginAction {
     type: string
@@ -19,8 +18,6 @@ export function loginAction(account: string, password: string) {
 }
 
 export function logoutAction() {
-    localStorage.clear()
-    clearAuth()
     return {
         type: LOGOUT
     }

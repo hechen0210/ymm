@@ -1,6 +1,7 @@
 export const DOMAIN = (window as any).__config.domain + "/admin"
 //登录
-export const LOGIN = "/login"
+export const LOGIN_API = "/login"
+export const LOGOUT_API = "/logout"
 export const PASSWORD_UPDATE = "/change-password"
 //区域
 export const AREA_LIST = "/area/list"

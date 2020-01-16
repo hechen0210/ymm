@@ -14,10 +14,10 @@ function* list(page = 0, pageSize = 0) {
         } else {
             result = yield call(ajax.get, AREA_LIST, {page: page, pageSize: pageSize})
         }
-        if (result.data.total > 0) {
-            list = result.data.list
-        }
         if (result.code === 200) {
+            if (result.data.total > 0) {
+                list = result.data.list
+            }
             yield put({
                 type: GET_AREA_LIST_SHOW,
                 list: list,

@@ -1,8 +1,9 @@
 import ajax from "../utils/ajax";
-import {call, take} from "redux-saga/effects";
+import {call, put, take} from "redux-saga/effects";
 import {PASSWORD_UPDATE} from "../constants/api";
 import {Alert} from "rsuite";
-import {CHANGE_PASSWORD} from "../constants/actions";
+import {CHANGE_PASSWORD, GET_QRCODE_LIST} from "../constants/actions";
+import {push} from "connected-react-router";
 
 function* updatePassword(oldPassword: string, newPassword: string, repeat: string) {
     try {
@@ -13,8 +14,9 @@ function* updatePassword(oldPassword: string, newPassword: string, repeat: strin
         })
         if (result.code === 200) {
             Alert.success(result.message)
-        } else {
-            Alert.error(result.message)
+        }else if (result.code === 403) {
+            yield put({type: GET_QRCODE_LIST, message: result.message})
+            yield put(push("/login"))
         }
     } catch (e) {
 

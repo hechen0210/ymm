@@ -11,7 +11,7 @@ function* info(type: string) {
         if (result.code === 200) {
             yield put({
                 type: GET_MESSAGE_INFO,
-                info:result.data,
+                info: result.data,
                 message: result.message
             })
         } else if (result.code === 403) {

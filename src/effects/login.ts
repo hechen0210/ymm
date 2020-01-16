@@ -2,12 +2,13 @@ import {call, put, take} from "redux-saga/effects";
 import {LOGIN, LOGIN_RESULT, LOGOUT} from "../constants/actions";
 import ajax from "../utils/ajax";
 import {push} from "connected-react-router";
-import {setAuth} from "../utils/auth";
+import {clearAuth, setAuth} from "../utils/auth";
 import {Alert} from "rsuite";
+import {LOGIN_API, LOGOUT_API} from "../constants/api";
 
 function* login(account: string, password: string) {
     try {
-        const result = yield call(ajax.post, "login", {account: account, password: password})
+        const result = yield call(ajax.post, LOGIN_API, {account: account, password: password})
         setAuth({
             uid: "1",
             account: account,
@@ -25,7 +26,7 @@ function* login(account: string, password: string) {
             yield put({type: LOGIN_RESULT, message: "登录成功"})
         } else {
             yield put({type: LOGIN, message: "登录失败"})
-            Alert.error("登录失败")
+            Alert.error(result.message)
         }
     } catch (e) {
         yield put({type: LOGIN_RESULT, message: "登录失败"})
@@ -34,8 +35,15 @@ function* login(account: string, password: string) {
 
 function* logout() {
     try {
-        yield put(push("/login"))
-        // yield put({})
+        const result = yield call(ajax.get, LOGOUT_API)
+        if (result.code === 200) {
+            Alert.success(result.message)
+            localStorage.clear()
+            clearAuth()
+            yield put(push("/login"))
+        } else {
+            Alert.error(result.message)
+        }
     } catch (e) {
 
     }
