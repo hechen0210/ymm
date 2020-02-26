@@ -2,7 +2,7 @@ import {
     AREA_DATA_LIST,
     AREA_LIST,
     AUTO_REPLY_KEY_WORDS,
-    AUTO_REPLY_MESSAGE, AUTO_REPLY_SUBSCRIBE,
+    AUTO_REPLY_MESSAGE, AUTO_REPLY_SUBSCRIBE, LIBRARY_IMG_TXT, LIBRARY_OTHER,
     QRCODE_LIST,
 } from "./urls";
 
@@ -17,6 +17,24 @@ export const menuList = [
                 "name": "区域列表",
                 "key": "2-1",
                 "url": AREA_LIST
+            },
+        ]
+    },
+    {
+        "name": "素材管理",
+        "key": "3",
+        "url": "",
+        "icon": "",
+        "sub": [
+            {
+                "name": "图文素材",
+                "key": "3-1",
+                "url": LIBRARY_IMG_TXT
+            },
+            {
+                "name": "其它素材",
+                "key": "3-2",
+                "url": LIBRARY_OTHER
             },
         ]
     },

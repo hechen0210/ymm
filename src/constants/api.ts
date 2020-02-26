@@ -8,6 +8,12 @@ export const AREA_LIST = "/area/list"
 export const AREA_UPDATE = "/area/update"
 export const AREA_DEL = "/area/del"
 export const AREA_ALL = "/area/all"
+//素材管理
+export const LIBRARY_LIST = "/library/list"
+export const LIBRARY_UPDATE = "/library/update"
+export const LIBRARY_DEL = "/library/del"
+export const LIBRARY_INFO = "/library/info"
+export const LIBRARY_SYNC = "/library/sync"
 
 //关键词回复
 export const KEY_WORDS_LIST = "/key_words/list"
@@ -25,3 +31,5 @@ export const QRCODE_DEL = "/qrcode/del"
 export const QRCODE_DOWNLOAD = "/qrcode/download"
 //数据
 export const DATA_LIST = "/data/list"
+//上传
+export const UPLOAD = "/upload"

@@ -2,13 +2,83 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58372bb1-d358-4103-9ee4-a726677fc4c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/actions/library.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/library-img-txt/card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/library-img-txt/edit.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/library-img-txt/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/library-other/card.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/library-other/cardHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/component/library-other/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/library/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/container/library/other.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/effects/library.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/library-img-txt.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/library-other.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sass/library.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.c8c1042027af744434e41b49dd6ad853.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/10.d9478067.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/10.d9478067.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/11.d9478067.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/11.d9478067.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/12.1cf0567c.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/12.1cf0567c.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/3.f80c5ce0.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/3.f80c5ce0.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/6.bc8024ab.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/6.bc8024ab.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/7.dc2d0c01.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/7.dc2d0c01.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/8.d8e278d0.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/8.d8e278d0.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/9.d9478067.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/9.d9478067.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.1c4e74da.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.1c4e74da.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/0.24b37679.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/0.24b37679.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/0.24b37679.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/10.bd8b5a82.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/10.bd8b5a82.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/10.bd8b5a82.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/11.e6eaecac.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/11.e6eaecac.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/11.e6eaecac.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/12.16023dd6.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/12.16023dd6.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/12.16023dd6.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/3.52f79582.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/3.52f79582.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/3.52f79582.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/4.20e48d81.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/4.20e48d81.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/4.20e48d81.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/5.e8889e2a.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/5.e8889e2a.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/5.e8889e2a.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/6.16cbd6e2.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/6.16cbd6e2.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/6.16cbd6e2.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/7.ace1b418.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/7.ace1b418.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/7.ace1b418.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/8.b3cf1911.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/8.b3cf1911.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/8.b3cf1911.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/9.46198cec.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/9.46198cec.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/9.46198cec.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.b622400c.chunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/main.b622400c.chunk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.b622400c.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.6c41733e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.6c41733e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/keyWords/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/keyWords/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/keyWords/keyWordsEdit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/keyWords/keyWordsEdit.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/effects/area.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/effects/area.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/effects/login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/effects/login.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/effects/message.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/effects/message.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/effects/setting.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/effects/setting.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/menu.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/menu.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/urls.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/urls.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/container/replay/keyWords.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/replay/keyWords.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/effects/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/effects/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/keyWords.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/keyWords.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router/authRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/authRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +95,8 @@
       <list>
         <option value="tsconfig.json" />
         <option value="XSLT Stylesheet" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -52,6 +122,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/component/library-other" />
       <recent name="$PROJECT_DIR$/src/reducers" />
       <recent name="$PROJECT_DIR$/src/component/login" />
     </key>
@@ -82,7 +153,12 @@
       <workItem from="1578627950437" duration="477000" />
       <workItem from="1578635874081" duration="100536000" />
       <workItem from="1579019379007" duration="3112000" />
-      <workItem from="1579028453382" duration="8393000" />
+      <workItem from="1579028453382" duration="12380000" />
+      <workItem from="1579234266521" duration="460000" />
+      <workItem from="1579234830625" duration="51000" />
+      <workItem from="1579234903407" duration="14789000" />
+      <workItem from="1581314304520" duration="44391000" />
+      <workItem from="1582612673882" duration="5397000" />
     </task>
     <servers />
   </component>
@@ -142,18 +218,18 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="440" y="265" key="Vcs.Push.Dialog.v2/0.0.1680.1050@0.0.1680.1050" timestamp="1578995359929" />
-    <state x="37" y="13" width="1480" height="1037" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1578770309503">
+    <state x="37" y="13" width="1480" height="1037" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1582273632437">
       <screen x="0" y="23" width="1680" height="951" />
     </state>
     <state x="37" y="13" width="1480" height="1037" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1577276343950" />
-    <state x="37" y="13" width="1480" height="1037" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.951@0.23.1680.951" timestamp="1578770309503" />
-    <state x="498" y="287" width="683" height="476" key="find.popup" timestamp="1579094149013">
+    <state x="37" y="13" width="1480" height="1037" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.951@0.23.1680.951" timestamp="1582273632437" />
+    <state x="498" y="287" width="683" height="476" key="find.popup" timestamp="1582621952558">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="498" y="287" width="683" height="476" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1579094149013" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1579153123610">
+    <state x="498" y="287" width="683" height="476" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1582621952558" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1582621737338">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1579153123610" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1582621737338" />
   </component>
 </project>

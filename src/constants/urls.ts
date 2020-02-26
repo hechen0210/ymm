@@ -3,6 +3,10 @@ export const SETTING = "/setting"
 //主菜单
 //系统设置
 export const AREA_LIST = "/area-list"
+//素材管理
+//图文
+export const LIBRARY_IMG_TXT = "/library-img-txt"
+export const LIBRARY_OTHER = "/library-other"
 //自动回复
 export const AUTO_REPLY_KEY_WORDS = "/auto-replay-key_words"
 export const AUTO_REPLY_MESSAGE = "/auto-replay-message"

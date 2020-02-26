@@ -603,7 +603,7 @@ module.exports = function (webpackEnv) {
                     };
                 },
             }),
-            // Moment.js is an extremely popular library that bundles large locale files
+            // Moment.js is an extremely popular library-img-txt that bundles large locale files
             // by default due to how Webpack interprets its code. This is a practical
             // solution that requires the user to opt into importing specific locales.
             // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack

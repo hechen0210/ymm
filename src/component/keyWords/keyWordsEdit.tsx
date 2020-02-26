@@ -11,16 +11,25 @@ import {
     Radio,
     SelectPicker,
     Whisper,
-    Tooltip
+    Tooltip,
+    Dropdown,
+    Icon, Input
 } from "rsuite";
+import Images from "../library-other/card";
+import News from "../library-img-txt/card"
 
 export interface IProps {
+    total: number,
     show: boolean,
+    picList: any,
+    newsList: any,
     title: string,
     formValue: any,
+    selected: any,
     onClose: () => void,
     onUpdate: (formValue: any) => void,
     onModify: (formValue: any) => void,
+    getPicList: (type: string, title: string, page: number, pageSize: number) => void
 }
 
 export default class KeyWordsEdit extends React.Component<IProps, any> {
@@ -39,6 +48,22 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
             ],
             formValue: "",
             match: "1",
+            imageLayer: false,
+            newsLayer: false,
+        }
+    }
+
+    addReplay = (key: string) => {
+        if (key === "text") {
+            let content = this.props.formValue.content
+            let item = {"type": key}
+            content.push(item)
+            this.handleFrom("content", content)
+        } else {
+            const layer = key + "Layer"
+            this.setState({
+                [layer]: true
+            })
         }
     }
 
@@ -71,12 +96,33 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
         this.props.onUpdate(this.props.formValue)
     }
 
+    closeLayer = (type: string) => {
+        const layer = type + "Layer"
+        this.setState({
+            [layer]: false
+        })
+    }
+
+    onImgSelect = (info: any) => {
+        let content = this.props.formValue.content
+        let item = {"type": "image", "id": info.id, "img": info.url, "title": info.name}
+        content.push(item)
+        this.handleFrom("content", content)
+    }
+
+    onNewsSelect = (info: any) => {
+        let content = this.props.formValue.content
+        let item = {"type": "news", "id": info.id, "img": info.cover_pic, "title": info.title}
+        content.push(item)
+        this.handleFrom("content", content)
+    }
+
     render() {
         return (
             <Drawer
                 show={this.props.show}
                 onHide={this.props.onClose}
-                size="sm"
+                size="md"
             >
                 <Drawer.Header>
                     <Drawer.Title>{this.props.title}</Drawer.Title>
@@ -91,7 +137,6 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
                         </FormGroup>
                         <FormGroup>
                             <ControlLabel>匹配方式</ControlLabel>
-
                         </FormGroup>
                         <FormGroup>
                             <div className="reply-attach-after">
@@ -145,33 +190,66 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
                             <div className="reply-attach-after">
                                 <ControlLabel>回复内容</ControlLabel>
                                 <Whisper placement="top" trigger="hover" speaker={<Tooltip>添加</Tooltip>}>
-                                    <Button color="green" onClick={() => {
-                                        let content = this.props.formValue.content
-                                        content.push("")
-                                        this.handleFrom("content", content)
-                                    }}>+</Button>
+                                    <Dropdown
+                                        renderTitle={() => {
+                                            return <Button color="green">+</Button>
+                                        }}
+                                        placement="rightEnd"
+                                        onSelect={this.addReplay}
+                                    >
+                                        <Dropdown.Item eventKey="news"><Icon
+                                            icon="newspaper-o"/> 图文消息</Dropdown.Item>
+                                        <Dropdown.Item eventKey="text"><Icon
+                                            icon="file-text"/> 文本消息</Dropdown.Item>
+                                        <Dropdown.Item eventKey="image"><Icon
+                                            icon="image"/> 图片消息</Dropdown.Item>
+                                    </Dropdown>
                                 </Whisper>
                             </div>
                             {
                                 this.props.formValue.content.map((item: any, index: number) => {
-                                    return <div key={index} className="reply-attach-before"
-                                                style={{marginBottom: "15px"}}>
-                                        {
-                                            index > 0 ? <Whisper placement="top" trigger="hover"
-                                                                 speaker={<Tooltip>删除</Tooltip>}>
-                                                <Button color="red" onClick={() => {
-                                                    let inputList = this.props.formValue.content
-                                                    let newInput = [...inputList.slice(0, index)]
-                                                    newInput.push(...inputList.slice(index + 1))
-                                                    this.handleFrom("content", newInput)
-                                                }}>x</Button>
-                                            </Whisper> : ""
-                                        }
-                                        <FormControl name="content[]" value={item} onChange={(e) => {
-                                            this.props.formValue.content[index] = e
-                                            this.handleFrom("content", this.props.formValue.content)
-                                        }}/>
-                                    </div>
+                                    if (item.type === "text" || item.type === "news" || item.type === "image") {
+                                        return <div key={index} className="reply-attach-before"
+                                                    style={{marginBottom: "15px"}}>
+                                            {
+                                                index > 0 ? <Whisper placement="top" trigger="hover"
+                                                                     speaker={<Tooltip>删除</Tooltip>}>
+                                                    <Button color="red" onClick={() => {
+                                                        let inputList = this.props.formValue.content
+                                                        let newInput = [...inputList.slice(0, index)]
+                                                        newInput.push(...inputList.slice(index + 1))
+                                                        this.handleFrom("content", newInput)
+                                                    }}>x</Button>
+                                                </Whisper> : ""
+                                            }
+                                            {
+                                                item.type === "text" ?
+                                                    <FormControl name="content[]"
+                                                                 componentClass="textarea"
+                                                                 rows={5}
+                                                                 value={item.content}
+                                                                 onChange={(e) => {
+                                                                     this.props.formValue.content[index].content = e
+                                                                     this.handleFrom("content", this.props.formValue.content)
+                                                                 }}/> : item.type === "news" ?
+                                                    <div>
+                                                        <img height="145" src={item.img} alt=""/>
+                                                        <span style={{
+                                                            display: "block",
+                                                            textAlign: "center",
+                                                            overflow: "hidden"
+                                                        }}>{item.title}</span></div> : item.type === "image" ?
+                                                        <div>
+                                                            <img height="145" src={item.img} alt=""/>
+                                                            <span style={{
+                                                                display: "block",
+                                                                textAlign: "center",
+                                                                overflow: "hidden"
+                                                            }}>{item.title}</span>
+                                                        </div> : ""
+                                            }
+                                        </div>
+                                    }
                                 })
                             }
                         </FormGroup>
@@ -191,6 +269,20 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
                     <Button onClick={this.handleUpdate} appearance="primary">提交</Button>
                     <Button onClick={this.props.onClose} appearance="subtle">取消</Button>
                 </Drawer.Footer>
+                <Images show={this.state.imageLayer}
+                        picList={this.props.picList.list}
+                        total={this.props.picList.total}
+                        getPicList={this.props.getPicList}
+                        onSelect={this.onImgSelect}
+                        onClose={this.closeLayer}
+                        clean={true}/>
+                <News show={this.state.newsLayer}
+                      newsList={this.props.newsList.list}
+                      total={this.props.newsList.total}
+                      clean={true}
+                      getNewsList={this.props.getPicList}
+                      onSelect={this.onNewsSelect}
+                      onClose={this.closeLayer}/>
             </Drawer>
         )
     }

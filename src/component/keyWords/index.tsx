@@ -8,12 +8,16 @@ import {initState} from "../../reducers/keyWords"
 export interface IProps {
     list: any
     total: number
+    picList: any
+    newsList: any
     update: boolean
     formValue: any
+    selected: any
     getList: (type: string, page: number, pageSize: number) => void
     onUpdate: (formValue: any) => void
     onDel: (id: number, type: string) => void,
     onModify: (formValue: any) => void,
+    getPicList: (type: string, title: string, page: number, pageSize: number) => void
 }
 
 export default class Index extends React.Component<IProps, any> {
@@ -51,7 +55,18 @@ export default class Index extends React.Component<IProps, any> {
             show: false
         }, function () {
             setTimeout(function () {
-                modify(initState.formValue)
+                modify({
+                    "id": 0,
+                    "name": "",
+                    "match_type": "1",
+                    "key_words": [{
+                        "match": "1",
+                        "words": ""
+                    }],
+                    "content": [],
+                    "reply_type": "1",
+                    "type": "key_words"
+                })
             }, 500)
         })
     }
@@ -118,13 +133,17 @@ export default class Index extends React.Component<IProps, any> {
             <div id="page">
                 <KeyWordsEdit show={this.state.show} onClose={this.close} title={this.state.title}
                               formValue={this.props.formValue} onModify={this.props.onModify}
-                              onUpdate={this.props.onUpdate}/>
+                              onUpdate={this.props.onUpdate} picList={this.props.picList}
+                              getPicList={this.props.getPicList} total={this.props.total} selected={this.props.selected}
+                              newsList={this.props.newsList}
+                />
                 <KeyWordsInfo info={this.state.info} show={this.state.showInfo} onClose={this.closeInfo}/>
                 <Button color="orange" onClick={this.add}>
                     <Icon icon="plus"/> 新增回复
                 </Button>
                 <Divider/>
-                <Table loading={false} data={this.props.list} style={{marginLeft: 25, marginRight: 25}} autoHeight={true}>
+                <Table loading={false} data={this.props.list} style={{marginLeft: 25, marginRight: 25}}
+                       autoHeight={true}>
                     <Column width={50} align="center" fixed>
                         <HeaderCell>Id</HeaderCell>
                         <Cell dataKey="id"/>

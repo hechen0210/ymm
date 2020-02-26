@@ -13,7 +13,7 @@ export const initState = {
             "match": "1",
             "words": ""
         }],
-        "content": [""],
+        "content": [],
         "reply_type": "1",
         "type": "key_words"
     }

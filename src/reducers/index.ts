@@ -7,6 +7,9 @@ import Message from "./message"
 import Qrcode from "./qrcode"
 import Data from "./data";
 import Subscribe from "./subscribe";
+import LibraryImgTxt from "./library-img-txt";
+import LibraryOther from "./library-other";
+
 
 export default {
     Login,
@@ -19,4 +22,6 @@ export default {
     Qrcode,
     Data,
     Subscribe,
+    LibraryImgTxt,
+    LibraryOther,
 }
