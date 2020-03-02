@@ -7,7 +7,7 @@ import {watchQrcodeList, watchQrcodeCreate, watchQrcodeDel, watchQrcodeDownLoad}
 import {watchDataList} from "./data";
 import {watchSubscribeInfo, watchSubscribeUpdate} from "./subscribe";
 import {watchPassword} from "./setting";
-import {watchLibList, watchLibUpdate, watchLibDel, watchSync} from "./library";
+import {watchLibList, watchLibUpdate, watchLibDel, watchSync, watchGetInfo} from "./library";
 
 function* effects() {
     yield all([
@@ -33,7 +33,8 @@ function* effects() {
         fork(watchLibList),
         fork(watchLibUpdate),
         fork(watchLibDel),
-        fork(watchSync)
+        fork(watchSync),
+        fork(watchGetInfo),
     ])
 }
 

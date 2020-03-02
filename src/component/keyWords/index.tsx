@@ -87,7 +87,7 @@ export default class Index extends React.Component<IProps, any> {
                             "id": rowData.id,
                             "name": rowData.name,
                             "key_words": rowData.key_words,
-                            "content": rowData.content.split(","),
+                            "content": rowData.content,
                             "reply_type": rowData.reply_type.toString(),
                             "type": "key_words"
                         })
@@ -105,7 +105,7 @@ export default class Index extends React.Component<IProps, any> {
                                 "id": rowData.id,
                                 "name": rowData.name,
                                 "key_words": rowData.key_words,
-                                "content": rowData.content.split(","),
+                                "content": rowData.content,
                                 "reply_type": rowData.reply_type.toString(),
                                 "type": "key_words"
                             }
@@ -155,10 +155,6 @@ export default class Index extends React.Component<IProps, any> {
                     <Column flexGrow={9}>
                         <HeaderCell>关键字</HeaderCell>
                         <KeyCell dataKey="key_words"/>
-                    </Column>
-                    <Column flexGrow={9}>
-                        <HeaderCell>回复内容</HeaderCell>
-                        <Cell dataKey="content"/>
                     </Column>
                     <Column flexGrow={3}>
                         <HeaderCell></HeaderCell>

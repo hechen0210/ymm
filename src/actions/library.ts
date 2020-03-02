@@ -1,4 +1,13 @@
-import {DEL_LIB, GET_LIB_LIST, MODIFY_LIB, SELECT_LIB, SYNC_LIB, UPDATE_LIB} from "../constants/actions";
+import {
+    CLEAN_DONE,
+    DEL_LIB,
+    GET_LIB_INFO,
+    GET_LIB_LIST,
+    MODIFY_LIB,
+    SELECT_LIB,
+    SYNC_LIB,
+    UPDATE_LIB
+} from "../constants/actions";
 
 export interface library {
     id: number
@@ -8,6 +17,7 @@ export interface library {
     formValue: any
     info: any
     libType: string
+    done: boolean
 }
 
 function getListAction(libType: string, title: string, page: number, pageSize: number) {
@@ -56,11 +66,26 @@ function selectAction(info: any) {
     }
 }
 
+function getInfoAction(id: number) {
+    return {
+        type: GET_LIB_INFO,
+        id
+    }
+}
+
+function cleanDoneAction() {
+    return {
+        type: CLEAN_DONE
+    }
+}
+
 export {
     getListAction,
     modifyAction,
     updateAction,
     delAction,
     selectAction,
-    syncAction
+    syncAction,
+    getInfoAction,
+    cleanDoneAction
 }

@@ -1478,6 +1478,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/braft-editor@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.npm.taobao.org/@types/braft-editor/download/@types/braft-editor-2.2.0.tgz#4ea310ff8e1e9ed88a49ea2e64b40254f937f026"
+  integrity sha1-TqMQ/44entiKSeouZLQCVPk38CY=
+  dependencies:
+    braft-editor "*"
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/@types/eslint-visitor-keys/download/@types/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -2659,7 +2666,7 @@ braft-convert@^2.3.0:
     draft-convert "^2.0.0"
     draft-js "^0.10.3"
 
-braft-editor@^2.3.8:
+braft-editor@*, braft-editor@^2.3.8:
   version "2.3.8"
   resolved "https://registry.npm.taobao.org/braft-editor/download/braft-editor-2.3.8.tgz#3adee489c371f87ee2771e6c5aa681ac04dce4c9"
   integrity sha1-Ot7kicNx+H7idx5sWqaBrATc5Mk=
@@ -2679,7 +2686,7 @@ braft-finder@^0.0.19:
   resolved "https://registry.npm.taobao.org/braft-finder/download/braft-finder-0.0.19.tgz#c324d82526ed3476a93de86cc9b407f4e188bc8d"
   integrity sha1-wyTYJSbtNHapPehsybQH9OGIvI0=
 
-braft-utils@^3.0.8:
+braft-utils@^3.0.12, braft-utils@^3.0.8:
   version "3.0.12"
   resolved "https://registry.npm.taobao.org/braft-utils/download/braft-utils-3.0.12.tgz#2b755ce1d8397d96b627b6767f74d07f25729d85"
   integrity sha1-K3Vc4dg5fZa2J7Z2f3TQfyVynYU=

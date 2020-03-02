@@ -1,7 +1,7 @@
 import React from "react";
 import {
     Button,
-    Drawer,
+    Drawer, FormControl,
 } from "rsuite";
 
 export interface IProps {
@@ -41,7 +41,29 @@ export default class KeyWordsInfo extends React.Component<IProps, any> {
                         <div className="info-content">
                             {
                                 this.props.info.content.map((item: any, index: number) => {
-                                    return <span key={index} style={{display: "block"}}>{item}</span>
+                                    if (item.type === "text" || item.type === "news" || item.type === "image") {
+                                        return <div key={index}>
+                                            {
+                                                item.type === "text" ?
+                                                    <div>{item.content}</div> : item.type === "news" ?
+                                                    <div>
+                                                        <img height="145" src={item.pic_url} alt=""/>
+                                                        <span style={{
+                                                            display: "block",
+                                                            textAlign: "center",
+                                                            overflow: "hidden"
+                                                        }}>{item.title}</span></div> : item.type === "image" ?
+                                                        <div>
+                                                            <img height="145" src={item.pic_url} alt=""/>
+                                                            <span style={{
+                                                                display: "block",
+                                                                textAlign: "center",
+                                                                overflow: "hidden"
+                                                            }}>{item.title}</span>
+                                                        </div> : ""
+                                            }
+                                        </div>
+                                    }
                                 })
                             }
                         </div>

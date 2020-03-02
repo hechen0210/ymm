@@ -50,7 +50,7 @@ export default class Card extends React.Component<IProps, any> {
                                 this.props.newsList.map((item: any) => {
                                     return <Panel className="picItem" key={item.id}
                                                   style={{border: this.state.selected.id === item.id ? "1px solid #4caf50" : ""}}>
-                                        <img src={item.cover_pic} alt={item.name} height="145" onClick={() => {
+                                        <img src={item.cover_pic} alt={item.name} height="145" width="145" onClick={() => {
                                             this.setState({
                                                 selected: item
                                             })

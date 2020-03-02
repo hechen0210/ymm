@@ -74,3 +74,9 @@
   width: 185px;
   cursor: pointer;
 }
+.editUpload{
+  background: none;
+  &:hover{
+    background: #cccccc;
+  }
+}

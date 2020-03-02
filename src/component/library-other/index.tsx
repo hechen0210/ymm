@@ -8,6 +8,7 @@ export interface IProps {
     list: any
     total: number
     selected: any
+    synced: boolean
     getList: (type: string, title: string, page: number, pageSize: number) => void
     onDel: (id: number, type: string) => void
     onUpdate: (formValue: any) => void
@@ -22,7 +23,17 @@ export default class LibraryOther extends React.Component<IProps, any> {
             page: 1,
             searchTile: "",
             upload: false,
-            loading: false
+            loading: false,
+            synced: true
+        }
+    }
+
+    componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<any>, snapshot?: any): void {
+        if (!prevProps.synced && this.props.synced) {
+            this.setState({
+                sync: false,
+                syncLoading: false,
+            })
         }
     }
 

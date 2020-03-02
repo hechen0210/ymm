@@ -1,8 +1,16 @@
 import ajax from "../utils/ajax";
 import {call, put, take} from "redux-saga/effects";
-import {LIBRARY_DEL, LIBRARY_LIST, LIBRARY_SYNC, LIBRARY_UPDATE} from "../constants/api";
+import {LIBRARY_DEL, LIBRARY_INFO, LIBRARY_LIST, LIBRARY_SYNC, LIBRARY_UPDATE} from "../constants/api";
 import {push} from "connected-react-router";
-import {DEL_LIB, GET_LIB_LIST, GET_LIB_LIST_SHOW, SYNC_LIB, UPDATE_LIB} from "../constants/actions";
+import {
+    DEL_LIB,
+    GET_LIB_INFO, GET_LIB_INFO_SHOW,
+    GET_LIB_LIST,
+    GET_LIB_LIST_SHOW,
+    SYNC_COMPLETED,
+    SYNC_LIB,
+    UPDATE_LIB
+} from "../constants/actions";
 import {Alert} from "rsuite";
 
 function* getList(type: string, title: string, page: number, pageSize: number) {
@@ -62,9 +70,25 @@ function* del(id: number, type: string) {
 function* sync(type: string) {
     try {
         const result = yield call(ajax.get, LIBRARY_SYNC, {type: type})
+        yield put({type: SYNC_COMPLETED})
         if (result.code === 200) {
             yield call(getList, type, "", 0, 0)
             Alert.success(result.message)
+        } else if (result.code === 403) {
+            yield put(push("/login"))
+        } else {
+            Alert.error(result.message)
+        }
+    } catch (e) {
+
+    }
+}
+
+function* getInfo(id: number) {
+    try {
+        const result = yield call(ajax.get, LIBRARY_INFO, {id: id})
+        if (result.code === 200) {
+            yield put({type: GET_LIB_INFO_SHOW, info: result.data, done: true})
         } else if (result.code === 403) {
             yield put(push("/login"))
         } else {
@@ -103,9 +127,17 @@ function* watchSync() {
     }
 }
 
+function* watchGetInfo() {
+    while (true) {
+        const infoAction = yield take(GET_LIB_INFO)
+        yield call(getInfo, infoAction.id)
+    }
+}
+
 export {
     watchLibList,
     watchLibUpdate,
     watchLibDel,
-    watchSync
+    watchSync,
+    watchGetInfo
 }

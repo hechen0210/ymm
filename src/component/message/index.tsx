@@ -1,6 +1,8 @@
 import React from "react";
 import TextMessage from "./textMessage";
 import "../../sass/reply.scss"
+import {Alert, Button, Icon} from "rsuite";
+import ImageMessage from "./imageMessage";
 
 export interface IProps {
     info: any
@@ -13,7 +15,8 @@ export default class Index extends React.Component<IProps, any> {
     constructor(props: Readonly<IProps>) {
         super(props);
         this.state = {
-            formValue: ""
+            formValue: [],
+            oldType: props.info.message_type
         }
     }
 
@@ -30,6 +33,22 @@ export default class Index extends React.Component<IProps, any> {
         this.props.onModify(formValue)
     }
 
+
+    handleUpdate = () => {
+        const content = this.props.info.content.trim()
+        const messageType = this.props.info.message_type.trim()
+        if (!content) {
+            Alert.error("消息内容不能为空")
+            return false
+        }
+        if (!messageType) {
+            Alert.error("消息类型错误")
+            return false
+        }
+        this.props.onEdit(this.props.info)
+    }
+
+
     render() {
         return (
             <div id="page">
@@ -42,8 +61,10 @@ export default class Index extends React.Component<IProps, any> {
                     {
                         this.props.info.message_type === "text" ?
                             <TextMessage formValue={this.props.info} onModify={this.props.onModify}
-                                         onEdit={this.props.onEdit}/> : ""
+                                         onEdit={this.props.onEdit} oldType={this.state.oldType}/> : ""
                     }
+                    <Button appearance="primary" style={{marginTop: "20px", float: "right"}}
+                            onClick={this.handleUpdate}>提交</Button>
                 </div>
             </div>
         )

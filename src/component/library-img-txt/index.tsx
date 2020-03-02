@@ -9,11 +9,16 @@ export interface IProps {
     total: number
     selected: any
     formValue: any
+    synced: boolean
+    done: boolean
     getList: (type: string, title: string, page: number, pageSize: number) => void
     onDel: (id: number, type: string) => void
     onUpdate: (formValue: any) => void
     onSelect: (info: any) => void
     onModify: (formValue: any) => void
+    onSync: (type: string) => void
+    getInfo: (id: number) => void
+    cleanDone: () => void
 }
 
 export default class LibraryImgTxt extends React.Component<IProps, any> {
@@ -23,6 +28,18 @@ export default class LibraryImgTxt extends React.Component<IProps, any> {
             page: 1,
             searchTile: "",
             show: false,
+            sync: false,
+            syncLoading: false,
+            id: 0
+        }
+    }
+
+    componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<any>, snapshot?: any): void {
+        if (!prevProps.synced && this.props.synced) {
+            this.setState({
+                sync: false,
+                syncLoading: false,
+            })
         }
     }
 
@@ -37,8 +54,22 @@ export default class LibraryImgTxt extends React.Component<IProps, any> {
     }
 
     close = () => {
+        let modify = this.props.onModify
         this.setState({
-            show: false
+            show: false,
+            id: 0
+        }, function () {
+            setTimeout(function () {
+                modify({
+                    "id": 0,
+                    "title": "",
+                    "author": "",
+                    "content": "",
+                    "show_cover_pic": false,
+                    "source_url": "",
+                    "comment": "2"
+                })
+            }, 500)
         })
     }
 
@@ -47,6 +78,13 @@ export default class LibraryImgTxt extends React.Component<IProps, any> {
         const ActionCell = ({rowData, dataKey, ...props}: any) => {
             return (
                 <Cell {...props} className="link-group">
+                    <a role="button" onClick={() => {
+                        this.setState({
+                            id: rowData.id,
+                            show: true
+                        })
+                    }}>编辑</a>
+                    <Divider vertical={true}/>
                     <a href={rowData.url} target="_blank">查看</a>
                     <Divider vertical={true}/>
                     <a role="button" onClick={() => {
@@ -64,7 +102,8 @@ export default class LibraryImgTxt extends React.Component<IProps, any> {
         }
         return (
             <div id="page">
-                <Edit show={this.state.show}
+                <Edit id={this.state.id}
+                      show={this.state.show}
                       formValue={this.props.formValue}
                       onEdit={this.props.onUpdate}
                       onClose={this.close}
@@ -75,13 +114,23 @@ export default class LibraryImgTxt extends React.Component<IProps, any> {
                       picList={this.props.picList}
                       total={this.props.total}
                       selected={this.props.selected}
+                      getInfo={this.props.getInfo}
+                      done={this.props.done}
+                      cleanDone={this.props.cleanDone}
                 />
                 <div className="header">
                     <div>
                         <Button color="orange" onClick={this.add}>
                             <Icon icon="plus"/> 新增素材
                         </Button>
-                        <Button color="green">
+                        <Button color="green" disabled={this.state.sync} loading={this.state.syncLoading}
+                                onClick={() => {
+                                    this.setState({
+                                        sync: true,
+                                        syncLoading: true,
+                                    })
+                                    this.props.onSync("news")
+                                }}>
                             <Icon icon="repeat"/> 获取已有素材
                         </Button>
                     </div>

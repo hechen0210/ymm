@@ -7,7 +7,8 @@ import {delAction, getListAction, selectAction, syncAction, updateAction} from "
 const mapStateToProps = (state: any) => ({
     list: state.LibraryOther.list,
     total: state.LibraryOther.total,
-    selected: state.LibraryOther.id
+    selected: state.LibraryOther.id,
+    synced: state.LibraryImgTxt.synced
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
@@ -15,7 +16,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
     onUpdate: (formValue: any) => dispatch(updateAction(formValue)),
     onSelect: (id: number) => dispatch(selectAction(id)),
     onDel: (id: number, type: string) => dispatch(delAction(id, type)),
-    onSync:(type:string)=>dispatch(syncAction(type))
+    onSync: (type: string) => dispatch(syncAction(type))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LibraryOther))

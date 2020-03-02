@@ -105,14 +105,14 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
 
     onImgSelect = (info: any) => {
         let content = this.props.formValue.content
-        let item = {"type": "image", "id": info.id, "img": info.url, "title": info.name}
+        let item = {"type": "image", "id": info.id, "pic_url": info.url, "title": info.name}
         content.push(item)
         this.handleFrom("content", content)
     }
 
     onNewsSelect = (info: any) => {
         let content = this.props.formValue.content
-        let item = {"type": "news", "id": info.id, "img": info.cover_pic, "title": info.title}
+        let item = {"type": "news", "id": info.id, "pic_url": info.cover_pic, "title": info.title}
         content.push(item)
         this.handleFrom("content", content)
     }
@@ -212,8 +212,8 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
                                         return <div key={index} className="reply-attach-before"
                                                     style={{marginBottom: "15px"}}>
                                             {
-                                                index > 0 ? <Whisper placement="top" trigger="hover"
-                                                                     speaker={<Tooltip>删除</Tooltip>}>
+                                                index >= 0 ? <Whisper placement="top" trigger="hover"
+                                                                      speaker={<Tooltip>删除</Tooltip>}>
                                                     <Button color="red" onClick={() => {
                                                         let inputList = this.props.formValue.content
                                                         let newInput = [...inputList.slice(0, index)]
@@ -233,14 +233,14 @@ export default class KeyWordsEdit extends React.Component<IProps, any> {
                                                                      this.handleFrom("content", this.props.formValue.content)
                                                                  }}/> : item.type === "news" ?
                                                     <div>
-                                                        <img height="145" src={item.img} alt=""/>
+                                                        <img height="145" src={item.pic_url} alt=""/>
                                                         <span style={{
                                                             display: "block",
                                                             textAlign: "center",
                                                             overflow: "hidden"
                                                         }}>{item.title}</span></div> : item.type === "image" ?
                                                         <div>
-                                                            <img height="145" src={item.img} alt=""/>
+                                                            <img height="145" src={item.pic_url} alt=""/>
                                                             <span style={{
                                                                 display: "block",
                                                                 textAlign: "center",

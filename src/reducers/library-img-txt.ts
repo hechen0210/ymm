@@ -1,10 +1,19 @@
 import {library} from "../actions/library";
-import {GET_LIB_LIST_SHOW, SELECT_LIB} from "../constants/actions";
+import {
+    CLEAN_DONE,
+    GET_LIB_INFO_SHOW,
+    GET_LIB_LIST_SHOW,
+    MODIFY_LIB,
+    SELECT_LIB,
+    SYNC_COMPLETED,
+    SYNC_LIB
+} from "../constants/actions";
 
 export const initState = {
     list: [],
     picList: [],
     total: 0,
+    synced: false,
     formValue: {
         "id": 0,
         "title": "",
@@ -12,9 +21,10 @@ export const initState = {
         "content": "",
         "show_cover_pic": false,
         "source_url": "",
-        "comment": 0
+        "comment": "2"
     },
-    info: []
+    info: [],
+    done: false
 }
 export default (state = initState, action: library) => {
     if (action.type === GET_LIB_LIST_SHOW) {
@@ -32,6 +42,28 @@ export default (state = initState, action: library) => {
         return Object.assign({}, state, {
             info: action.info
         })
+    } else if (action.type === MODIFY_LIB) {
+        return Object.assign({}, state, {
+            formValue: action.formValue
+        })
+    } else if (action.type === SYNC_LIB) {
+        return Object.assign({}, state, {
+            synced: false
+        })
+    } else if (action.type === SYNC_COMPLETED) {
+        return Object.assign({}, state, {
+            synced: true
+        })
+    } else if (action.type === GET_LIB_INFO_SHOW) {
+        return Object.assign({}, state, {
+            formValue: action.info,
+            done: true
+        })
+    } else if (action.type === CLEAN_DONE) {
+        return Object.assign({}, state, {
+                done: false
+            }
+        )
     }
     return state
 }

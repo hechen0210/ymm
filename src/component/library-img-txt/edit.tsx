@@ -1,5 +1,5 @@
 import React from "react";
-import BraftEditor, {ControlType} from "braft-editor"
+import BraftEditor, {ControlType, ExtendControlType, EditorState} from "braft-editor"
 import 'braft-editor/dist/index.css'
 import {
     Button,
@@ -12,32 +12,62 @@ import {
     Radio,
     RadioGroup,
     Input,
-    Icon
+    Icon, Alert, Uploader,
+    IconButton
 } from "rsuite";
 import "../../sass/library.scss"
 import Card from "../library-other/card";
+import {getCookie} from "../../utils/cookie";
+import {DOMAIN, UPLOAD} from "../../constants/api";
+// @ts-ignore
+import {ContentUtils} from 'braft-utils'
 
 export interface IProps {
+    id: number
     total: number
     show: boolean,
     selected: any,
     picList: any,
     formValue: any,
+    done: boolean,
     onEdit: (id: number, name: string, type: string) => void,
     onClose: () => void,
     onModify: (formValue: any) => void
     onUpdate: (formValue: any) => void
     onSelect: (info: any) => void
     getPicList: (type: string, title: string, page: number, pageSize: number) => void
+    getInfo: (id: number) => void
+    cleanDone: () => void
 }
 
 export default class Edit extends React.Component<IProps, any> {
     constructor(props: Readonly<IProps>) {
         super(props);
         this.state = {
-            show: true,
             formValue: "",
-            showLib: false
+            showLib: false,
+            upload: false,
+            loading: false,
+            editorState: BraftEditor.createEditorState(null)
+        }
+    }
+
+    componentDidUpdate(prevProps: Readonly<IProps>, prevState: Readonly<any>, snapshot?: any): void {
+        if (!prevProps.show && this.props.show) {
+            if (this.props.id > 0) {
+                this.props.getInfo(this.props.id)
+            }
+            this.setState({
+                editorState: BraftEditor.createEditorState(this.props.formValue.content)
+            })
+        }
+        if (!prevProps.done && this.props.done) {
+            const cleanDone = this.props.cleanDone
+            this.setState({
+                editorState: BraftEditor.createEditorState(this.props.formValue.content)
+            }, function () {
+                cleanDone()
+            })
         }
     }
 
@@ -48,6 +78,11 @@ export default class Edit extends React.Component<IProps, any> {
             formValue: formValue
         })
         this.props.onModify(formValue)
+    }
+
+    setContent = (editorState: EditorState) => {
+        this.setState({editorState})
+        this.handleFrom("content", editorState.toHTML())
     }
 
     handleUpdate = () => {
@@ -64,7 +99,45 @@ export default class Edit extends React.Component<IProps, any> {
 
     render() {
         const controls: ControlType[] = ["undo", "redo", "remove-styles", "font-size", "bold", "italic", "underline", "strike-through", "text-color", "text-align", "text-indent", "letter-spacing", "list-ul", "table", "blockquote", "hr", "emoji"]
+        const extendControls: ExtendControlType[] = [{
+            key: "upload-img",
+            type: 'component',
+            component: (
+                <Uploader style={{marginBottom: "5px"}}
+                          onUpload={value => {
+                              this.setState({
+                                  upload: true,
+                                  loading: true
+                              })
+                          }}
+                          onSuccess={(response: any, file) => {
+                              if (response.code === 200) {
+                                  this.setContent(ContentUtils.insertMedias(this.state.editorState, [{
+                                      type: 'IMAGE',
+                                      url: response.data
+                                  }]))
+                              } else {
+                                  Alert.error(response.message)
+                              }
+                              this.setState({
+                                  upload: false,
+                                  loading: false
+                              })
+                          }}
+                          headers={{
+                              'Authorization': 'Bearer ' + getCookie('token') === "undefined" ? "" : getCookie("token"),
+                          }}
+                          action={DOMAIN + UPLOAD}
+                          data={{"type": "news"}}
+                          fileListVisible={false}
+                          disabled={this.state.upload}
+                >
+                    <IconButton className="editUpload" style={{background: "none"}} icon={<Icon icon="image"/>}/>
+                </Uploader>
+            )
+        }]
         return (
+
             <div>
                 <Drawer backdrop={true} show={this.props.show} onHide={this.props.onClose}
                         size="lg">
@@ -88,11 +161,11 @@ export default class Edit extends React.Component<IProps, any> {
                             <FormGroup>
                                 <ControlLabel>正文</ControlLabel>
                                 <BraftEditor
+                                    value={this.state.editorState}
                                     controls={controls}
+                                    extendControls={extendControls}
                                     style={{border: "1px solid #e5e5ea"}}
-                                    onChange={(value) => {
-                                        this.handleFrom("content", value.toHTML())
-                                    }}
+                                    onChange={this.setContent}
                                 />
                             </FormGroup>
                             <FormGroup>
@@ -114,11 +187,16 @@ export default class Edit extends React.Component<IProps, any> {
                                         {
                                             this.props.selected.length !== 0 ?
                                                 <img src={this.props.selected.url} alt={this.props.selected.name}
-                                                     width={134} style={{verticalAlign: "top"}}/> :
-                                                <Icon icon="plus" style={{color: "#e5e5ea", fontSize: "18px"}}/>
+                                                     width={134} height={134} style={{verticalAlign: "top"}}/> :
+                                                this.props.formValue.cover_pic !== "" ?
+                                                    <img src={this.props.formValue.cover_pic} width={134} height={134}
+                                                         style={{verticalAlign: "top"}}/>
+                                                    :
+                                                    <Icon icon="plus" style={{color: "#e5e5ea", fontSize: "18px"}}/>
                                         }
                                         </span>
                                     < Input
+                                        value={this.props.formValue.summary}
                                         componentClass="textarea"
                                         rows={6}
                                         placeholder="选填，摘要会在订阅号消息、转发链接等文章外的场景显露，帮助读者快速了解内容，如不填写则默认抓取正文前54字"
@@ -134,7 +212,7 @@ export default class Edit extends React.Component<IProps, any> {
                                     size='lg'
                                     checkedChildren="显示"
                                     unCheckedChildren="不显示"
-                                    defaultChecked={this.props.formValue.show_cover_pic === "1"}
+                                    checked={this.props.formValue.show_cover_pic === 1}
                                     onChange={(value) => {
                                         this.handleFrom("show_cover_pic", value ? "1" : "0")
                                     }}
@@ -149,7 +227,7 @@ export default class Edit extends React.Component<IProps, any> {
                             </FormGroup>
                             <FormGroup className="form-group-line">
                                 <ControlLabel style={{lineHeight: "36px"}}>开启评论</ControlLabel>
-                                <RadioGroup name="comment" defaultValue={this.props.formValue.comment || "2"}
+                                <RadioGroup name="comment" defaultValue={this.props.formValue.comment}
                                             onChange={(value) => {
                                                 this.handleFrom("comment", value)
                                             }}>
