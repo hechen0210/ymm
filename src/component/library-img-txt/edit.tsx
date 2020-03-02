@@ -87,7 +87,11 @@ export default class Edit extends React.Component<IProps, any> {
 
     handleUpdate = () => {
         let formValue = this.props.formValue
-        formValue["cover_pic"] = this.props.selected.media_id
+        if (formValue.id > 0) {
+            formValue["cover_pic"] = this.props.formValue.cover_pic_id
+        } else {
+            formValue["cover_pic"] = this.props.selected.media_id
+        }
         this.props.onUpdate(formValue)
     }
 
