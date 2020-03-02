@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="58372bb1-d358-4103-9ee4-a726677fc4c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/precache-manifest.21f9387e35b04911a86cd6d7009d56c8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/10.36f983ae.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.5b1713b9.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/library-img-txt/edit.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/library-img-txt/edit.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +82,7 @@
       <workItem from="1579234830625" duration="51000" />
       <workItem from="1579234903407" duration="14789000" />
       <workItem from="1581314304520" duration="44391000" />
-      <workItem from="1582612673882" duration="28534000" />
+      <workItem from="1582612673882" duration="28756000" />
     </task>
     <servers />
   </component>
@@ -154,13 +147,13 @@
     </state>
     <state x="37" y="13" width="1480" height="1037" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1577276343950" />
     <state x="37" y="13" width="1480" height="1037" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1680.951@0.23.1680.951" timestamp="1582273632437" />
-    <state x="498" y="287" width="683" height="476" key="find.popup" timestamp="1583129648947">
+    <state x="498" y="287" width="683" height="476" key="find.popup" timestamp="1583138320719">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="498" y="287" width="683" height="476" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1583129648947" />
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1582878473822">
+    <state x="498" y="287" width="683" height="476" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1583138320719" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1583138232909">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
-    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1582878473822" />
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1583138232909" />
   </component>
 </project>

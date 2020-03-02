@@ -75,7 +75,8 @@ a {
       background: #1d1f27;
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      min-height: 100vh;
+      height: auto;
 
       .nav-toggle {
         background: black;
